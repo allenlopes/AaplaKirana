@@ -22,7 +22,9 @@ const Navbar = () => {
             className="search"
           />
           <button>
-            <AiOutlineSearch />
+            <IconContext.Provider value={{ className: "top-react-icons" }}>
+              <AiOutlineSearch />
+            </IconContext.Provider>
           </button>
         </div>
 
