@@ -6,6 +6,8 @@ import {FiShoppingCart} from 'react-icons/fi'
 import {HiOutlineUser} from 'react-icons/hi'
 import Dropdown from 'react-bootstrap/Dropdown'
 
+import { IconContext } from 'react-icons';
+
 const Navbar = () => {
     const [cartquantity, setcartquantity] = useState(0)
   return (
@@ -20,21 +22,24 @@ const Navbar = () => {
             className="search"
           />
           <button>
-            {" "}
-            <AiOutlineSearch />{" "}
+            <AiOutlineSearch />
           </button>
         </div>
 
         <div className="right">
           <div className="cart">
             <span className="qty">{cartquantity} </span>
-            <FiShoppingCart />
+            <IconContext.Provider value={{ className: "top-react-icons" }}>
+              <FiShoppingCart />
+            </IconContext.Provider>
           </div>
-          <HiOutlineUser />
+          <IconContext.Provider value={{ className: "top-react-icons" }}>
+            <HiOutlineUser />
+          </IconContext.Provider>
         </div>
       </div>
 
-{/* The following class 's2' is used as Navigation bar which conatins - categories tab, About us tab, Contact us tab and More tab*/}
+      {/* The following class 's2' is used as Navigation bar which conatins - categories tab, About us tab, Contact us tab and More tab*/}
       <div className="s2">
         {/* The following Dropdown code has been taken from "react bootstrap dropdown" code from their official website and edited*/}
         <Dropdown>
@@ -61,12 +66,9 @@ const Navbar = () => {
           <Dropdown.Menu>
             <Dropdown.Item href="#/action-1">FAQ</Dropdown.Item>
             <Dropdown.Item href="#/action-2">Privacy Policy</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">
-              Terms & Conditions
-            </Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Terms & Conditions</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-
       </div>
     </nav>
   );
