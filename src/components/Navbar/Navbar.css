@@ -11,4 +11,6 @@ nav .top-react-icons{
     cursor: pointer;
 }
 
-nav .top-react-icons:hover{}
+nav .top-react-icons:hover{
+    color: var(--col1);
+}
