@@ -91,3 +91,27 @@ nav .cart .qty {
     font-size: 15px;
     text-align: center;
 }
+
+nav .s2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    gap: 3%;
+}
+
+nav .s2 a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#dropdown-basic:hover {
+    color: var(--col1);
+}
+
+nav .aboutcontact:hover{
+    color: var(--col1);
+    gap: 3%;
+}
