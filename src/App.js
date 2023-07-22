@@ -3,6 +3,9 @@ import {Route, Routes, BrowserRouter} from 'react-router-dom'
 import Home from './pages/HomePage/Home'
 import './App.css'
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const App = () => {
   return (
     <div>
