@@ -1,7 +1,7 @@
 nav{
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 7px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -21,6 +21,7 @@ nav .s1 {
     justify-content: space-between;
     align-items: center;
 }
+
 
 nav img {
     width: 100px;
