@@ -57,9 +57,9 @@ const Navbar = () => {
           </Dropdown.Menu>
         </Dropdown>
 
-        <a>About Us</a>
+          <a className="aboutcontact">About Us</a>
 
-        <a>Contact Us</a>
+          <a className="aboutcontact">Contact Us</a>
 
         <Dropdown>
           <Dropdown.Toggle variant="" id="dropdown-basic">
