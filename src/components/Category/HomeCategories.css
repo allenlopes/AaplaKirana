@@ -16,6 +16,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+    margin: 10px;
 }
 
 .homecategories .container img {
@@ -44,6 +45,21 @@
 }
 
 .homecategories .container:nth-child(1) {
-    background-color: #fdbc6e;
-    color: gray;
+    background-color: #fbdc6e;
+    color: rgb(0, 0, 0);
+}
+
+.homecategories .container:nth-child(2) {
+    background-color: #ff9393;
+    color: rgb(255, 255, 255);
+}
+
+.homecategories .container:nth-child(3) {
+    background-color: #ffabe4;
+    color: rgb(0, 0, 0);
+}
+
+.homecategories .container:nth-child(4) {
+    background-color: #a8d0e6;
+    color: rgb(0, 0, 0);
 }
