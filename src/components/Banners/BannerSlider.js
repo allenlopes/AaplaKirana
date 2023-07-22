@@ -25,6 +25,29 @@ const BannerSlider = () => {
           "We deliver fresh vegetables, fruits & your daily household needs within minutes you order them!",
         button: "https://www.google.com",
       },
+
+      {
+        id: 3,
+        image:
+          "https://images.unsplash.com/photo-1611038333075-2efd28705f42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=949&q=80",
+        title:
+          "Fresh Vegetables, Fruits & your daily household needs at your doorstep",
+        description:
+          "We deliver fresh vegetables, fruits & your daily household needs within minutes you order them!",
+        button: "https://www.google.com",
+      },
+
+      {
+        id: 4,
+        image:
+          "https://images.unsplash.com/photo-1641652682537-e1a9334f206d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+        title:
+          "Fresh Vegetables, Fruits & your daily household needs at your doorstep",
+        description:
+          "We deliver fresh vegetables, fruits & your daily household needs within minutes you order them!",
+        button: "https://www.google.com",
+      },
+
     ];
 
     var settings = {
