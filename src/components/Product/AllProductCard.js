@@ -18,6 +18,11 @@ const AllProductCard = ({ data }) => {
           }
           <span>&#8377;{data.productprice}</span>
         </h3>
+        <p>
+          {
+            data.productname
+          }
+        </p>
       </div>
 
       <div className="s3">
