@@ -3,6 +3,7 @@ import img1 from "../../assets/Images/1.png";
 import img2 from "../../assets/Images/2.png";
 import img3 from "../../assets/Images/3.png";
 import img4 from "../../assets/Images/4.png";
+import './CategorySidebar.css';
 
 const CategorySidebar = () => {
   const data = [
