@@ -6,23 +6,17 @@ import './AllProductCard.css'
 const AllProductCard = ({ data }) => {
   return (
     <div className="product">
-
       <div className="s1">
         <img src={data.productimage} alt={"no image"} />
       </div>
 
       <div className="s2">
         <h3>
-          {
-          data.productprice - (data.productprice * data.discountpercent / 100)
-          }
-          <span>&#8377;{data.productprice}</span>
+          &#8377;
+          { data.productprice - (data.productprice * data.discountpercent) / 100 }
+            <span>&#8377;{data.productprice}</span>
         </h3>
-        <p>
-          {
-            data.productname
-          }
-        </p>
+        <p>{data.productname}</p>
       </div>
 
       <div className="s3">
