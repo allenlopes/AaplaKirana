@@ -49,13 +49,13 @@ const Footer2 = () => {
           <h3>Subscribe Now</h3>
           <p>Subscribe your email for newsletter and etc.</p>
           <div className="inputcontainer">
-            <div className="icon">
+            <span className="icon1">
               <HiOutlineMail />
-            </div>
+            </span>
             <input type="text" placeholder="Enter your email" />
-            <div className="icon2">
+            <span className="icon2">
               <AiOutlineSend />
-              </div>
+            </span>
           </div>
         </div>
       </div>
