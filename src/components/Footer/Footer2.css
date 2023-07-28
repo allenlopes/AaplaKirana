@@ -15,8 +15,25 @@
     padding: 30px;
 }
 
+.footer .footerin1 div{
+    width: 20%;
+    min-width: 250px;
+}
+
+.footer .footerin1 .f1{
+    width: 15%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
 .footer .footerin1 .f1 img {
     width: 160px;
     height: 150px;
     margin-bottom: 10px;
+}
+
+.footer .footerin1 .f1 p {
+    font-size: 16px;
+    color: #2f2f2f;
 }
