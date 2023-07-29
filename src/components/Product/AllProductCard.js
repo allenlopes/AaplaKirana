@@ -39,7 +39,13 @@ const AllProductCard = ({ data }) => {
             <p>{qty}</p>
             <button onClick={() => setqty(qty+1)}>+</button>
           </div>
-          <button className='addtocart'>
+          <button className='addtocart'
+          onClick={() =>{
+            setShow(false)
+            // setqty(1)
+            alert('Product added to cart :)')
+          }}
+          >
             Add to cart
           </button>
         </div>
