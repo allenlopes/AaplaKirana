@@ -94,7 +94,7 @@
     height: 30px;
     background-color: white;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 50%;
+    border-radius: 30%;
     padding: 5px;
     color: black;
     background-color: var(--col1);
@@ -112,11 +112,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
     width: 100%;
     height: 100%;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 3px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -124,7 +124,26 @@
     width: 30px;
     height: 30px;
     border: none;
-    background-color: white;
-    color:  var(--col1);
+    background-color: var(--col1);
+    color:  white;
     font-size: 20px;
+    font-weight: 500;
+    border-radius: 3px;
+    transition: all 0.5s ease-in-out;
+}
+
+.product .addbtn .qty p{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px;
+    padding: 0px;
+    color: var(--col1);
+}
+
+.product .addbtn .addtocart{
+    border: none;
+    background-color: var(--col1);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
 }
