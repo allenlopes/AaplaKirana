@@ -6,7 +6,7 @@ import './AllProductCard.css'
 const AllProductCard = ({ data }) => {
 
   const [show, setShow] = useState(false)
-  const [qty, setqty] = useState(2)
+  const [qty, setqty] = useState(1)
   return (
     <div className="product">
       <div className="s1">
@@ -39,6 +39,9 @@ const AllProductCard = ({ data }) => {
             <p>{qty}</p>
             <button onClick={() => setqty(qty+1)}>+</button>
           </div>
+          <button className='addtocart'>
+            Add to cart
+          </button>
         </div>
       :
         <div className="addbtn">
