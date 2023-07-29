@@ -6,7 +6,7 @@ import './AllProductCard.css'
 const AllProductCard = ({ data }) => {
 
   const [show, setShow] = useState(false)
-  const [qty, setqty] = useState(1)
+  const [qty, setqty] = useState(2)
   return (
     <div className="product">
       <div className="s1">
@@ -26,11 +26,24 @@ const AllProductCard = ({ data }) => {
         <p>{data.counttype}</p>
       </div>
       {
-      show ? <></> //If show is true then it shows nothing, else the div part is executed.
+      show ?          //If show is true then it shows nothing, else the div part is executed.
+        <div className='addbtn'>
+          <div className='qty'>
+            <button onClick={() =>
+            {
+            if(qty>1)
+            {
+              setqty(qty-1)
+            }
+            }}>-</button>
+            <p>{qty}</p>
+            <button onClick={() => setqty(qty+1)}>+</button>
+          </div>
+        </div>
       :
         <div className="addbtn">
           <AiOutlineEye />
-          <AiOutlinePlusCircle />
+          <AiOutlinePlusCircle onClick={() => setShow(true)}/>
         </div>
       }
 
