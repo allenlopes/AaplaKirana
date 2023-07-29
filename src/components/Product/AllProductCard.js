@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {AiOutlineEye} from 'react-icons/ai'
 import {AiOutlinePlusCircle} from 'react-icons/ai'
 import './AllProductCard.css'
 
 const AllProductCard = ({ data }) => {
+
+  const [show, setShow] = useState(false)
+  const [qty, setqty] = useState(1)
   return (
     <div className="product">
       <div className="s1">
@@ -13,8 +16,8 @@ const AllProductCard = ({ data }) => {
       <div className="s2">
         <h3>
           &#8377;
-          { data.productprice - (data.productprice * data.discountpercent) / 100 }
-            <span>&#8377;{data.productprice}</span>
+          {data.productprice - (data.productprice * data.discountpercent) / 100}
+          <span>&#8377;{data.productprice}</span>
         </h3>
         <p>{data.productname}</p>
       </div>
@@ -22,11 +25,15 @@ const AllProductCard = ({ data }) => {
       <div className="s3">
         <p>{data.counttype}</p>
       </div>
+      {
+      show ? <></> //If show is true then it shows nothing, else the div part is executed.
+      :
+        <div className="addbtn">
+          <AiOutlineEye />
+          <AiOutlinePlusCircle />
+        </div>
+      }
 
-      <div className="addbtn">
-        <AiOutlineEye />
-        <AiOutlinePlusCircle />
-      </div>
     </div>
   );
 }
