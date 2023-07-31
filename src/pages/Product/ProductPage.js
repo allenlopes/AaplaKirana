@@ -38,6 +38,10 @@ const ProductPage = () => {
                       {
                         id : 3,
                         image : img3
+                      },
+                      {
+                        id : 4,
+                        image : img4
                       }
                     ],
                     "ProductCode": "P1",
@@ -85,7 +89,7 @@ const ProductPage = () => {
   },[])
 
   return (
-    <div className='productpage'>
+    <div className="productpage">
       {/* <h1>Product id is - {prodid}</h1>
       <p>
         {JSON.stringify(productdata)}
@@ -93,17 +97,37 @@ const ProductPage = () => {
 
       <Navbar />
 
-      <div className='pc1'>
-        <Link to='/'>
+      <div className="pc1">
+        <Link to="/">
           <button>
             <BsChevronLeft />
             Go Back
           </button>
         </Link>
-      </div>
 
+        <div className="c11">
+          <div className="imgset"></div>
+          <div className="imgbig"></div>
+        </div>
+
+        <div className="c12">
+          <h1 className="head1">{productdata.ProductName}</h1>
+          <div className="c12.1">
+            <p className="price">
+              <span>&#8377;{productdata.SalesPrice}</span>
+              <span>&#8377;{productdata.ProductPrice}</span>
+            </p>
+
+            <div className='incrdecr'>
+              <button>-</button>
+              <p>1</p>
+              <button>+</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
 export default ProductPage
