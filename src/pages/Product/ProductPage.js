@@ -6,6 +6,8 @@ import img3 from "../../assets/Images/3.png";
 import img4 from "../../assets/Images/4.png";
 import { useEffect } from 'react';
 
+import Navbar from '../../components/Navbar/Navbar'
+
 
 const ProductPage = () => {
   const {prodid} = useParams()
@@ -82,11 +84,13 @@ const ProductPage = () => {
   },[])
 
   return (
-    <div>
-      <h1>Product id is - {prodid}</h1>
+    <div className='productpage'>
+      {/* <h1>Product id is - {prodid}</h1>
       <p>
         {JSON.stringify(productdata)}
-      </p>
+      </p> */}
+
+      <Navbar />
     </div>
   )
 }
