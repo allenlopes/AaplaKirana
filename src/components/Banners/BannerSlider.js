@@ -59,7 +59,7 @@ const BannerSlider = () => {
       };
 
   return (
-    <div className='bannerslider'>BannerSlider
+    <div className='bannerslider'>
     <Slider className='bannerslider' {...settings}>
         {
             data.map(item=> {
