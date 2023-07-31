@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import img1 from '../../assets/Images/1.png';
 import img2 from '../../assets/Images/2.png';
 import img3 from "../../assets/Images/3.png";
@@ -7,6 +7,7 @@ import img4 from "../../assets/Images/4.png";
 import { useEffect } from 'react';
 
 import Navbar from '../../components/Navbar/Navbar'
+import {BsChevronLeft} from 'react-icons/bs'
 
 
 const ProductPage = () => {
@@ -91,6 +92,16 @@ const ProductPage = () => {
       </p> */}
 
       <Navbar />
+
+      <div className='pc1'>
+        <Link to='/'>
+          <button>
+            <BsChevronLeft />
+            Go Back
+          </button>
+        </Link>
+      </div>
+
     </div>
   )
 }
