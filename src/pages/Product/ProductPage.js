@@ -15,6 +15,7 @@ const ProductPage = () => {
   const [imageset, setimageset] = React.useState(null)
   const [productdata, setproductdata] = React.useState([])
   const [activeimg, setactiveimg] = React.useState({})
+  const [count, setcount] = React.useState(1)
 
 
   const getproductdatabyid = async () => {
@@ -114,14 +115,32 @@ const ProductPage = () => {
           <h1 className="head1">{productdata.ProductName}</h1>
           <div className="c12.1">
             <p className="price">
-              <span>&#8377;{productdata.SalesPrice}</span>
-              <span>&#8377;{productdata.ProductPrice}</span>
+              <span>&#8377;{productdata.SalesPrice * count}</span>
+              <span>&#8377;{productdata.ProductPrice * count}</span>
             </p>
 
-            <div className='incrdecr'>
-              <button>-</button>
-              <p>1</p>
-              <button>+</button>
+            <div className="incrdecr">
+              <button
+                onClick={() => {
+                  if (count > 1) {
+                    setcount(count - 1);
+                  }
+                }}
+              >
+                -
+              </button>
+
+              <p> {count} </p>
+
+              <button
+                onClick={() => {
+                  if (count < 10) {
+                    setcount(count + 1);
+                  }
+                }}
+              >
+                +
+              </button>
             </div>
           </div>
         </div>
