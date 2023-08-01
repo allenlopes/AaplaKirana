@@ -113,7 +113,10 @@ const ProductPage = () => {
               {
                 return (
                   // suppose we have 3 images in imageset then it will be returned here.
-                  <div className="imgsmall">
+                  <div className="imgsmall"
+                    onClick={() => {
+                      setactiveimg(item) // Suppose if we click on any image then this onClick will set that image as active image.
+                  }}>
                     <img src={item.image} alt="" />
                   </div>
                 );
