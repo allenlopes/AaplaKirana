@@ -4,3 +4,9 @@
     justify-content: center;
     position: relative;
 }
+
+.productpage .pc1 .c11 {
+    width: 30%;
+    justify-content: flex-start;
+    display: flex;
+}
