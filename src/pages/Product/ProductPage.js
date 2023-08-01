@@ -117,7 +117,12 @@ const ProductPage = () => {
                     onClick={() => {
                       setactiveimg(item) // Suppose if we click on any image then this onClick will set that image as active image.
                   }}>
-                    <img src={item.image} alt="" />
+                    <img src={item.image} alt=""
+                    // for className if the activeimg.id matches with current item's id then give it a className of active; else don't give any className.
+                    className={
+                      activeimg.id == item.id ? 'active' : ''
+                      }
+                    />
                   </div>
                 );
               })
