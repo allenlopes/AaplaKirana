@@ -6,7 +6,32 @@
 }
 
 .productpage .pc1 .c11 {
-    width: 30%;
-    justify-content: flex-start;
     display: flex;
+    justify-content: flex-start;
+    width: 45%;
+}
+
+.productpage .pc1 .c11 .imgset {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px;
+}
+
+.productpage .pc1 .c11 .imgset img {
+    width: 30%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+}
+
+.productpage .pc1 .c11 .imgset .active {
+    border: 5px solid var(--col1);
+    width: 30%;
+}
+
+.productpage .pc1 .c11 .imgbig {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 1/1;
 }
