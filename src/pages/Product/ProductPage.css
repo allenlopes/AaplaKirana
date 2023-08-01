@@ -95,3 +95,26 @@
     margin: 0px;
     padding: 0px;
 }
+
+.productpage .btncontainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.productpage .btncontainer button {
+    width: 160px;
+    height: 40px;
+    border: none;
+    background-color: var(--col1);
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 550;
+    cursor: pointer;
+}
+
+.productpage .btncontainer button:hover {
+    background-color: black;
+}
