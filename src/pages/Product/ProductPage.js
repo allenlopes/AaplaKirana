@@ -143,6 +143,22 @@ const ProductPage = () => {
               </button>
             </div>
           </div>
+
+          <div className='btncount'>
+            <button
+              onClick={() => {
+                alert("Added to cart");
+              }}>
+              Add to Cart
+            </button>
+
+            <button
+              onClick={() => {
+                alert('Buy Now')
+              }}>
+              Buy Now
+            </button>
+          </div>
         </div>
       </div>
     </div>
