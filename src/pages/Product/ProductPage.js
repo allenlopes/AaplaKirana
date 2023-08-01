@@ -107,9 +107,26 @@ const ProductPage = () => {
         </Link>
 
         <div className="c11">
-          <div className="imgset"></div>
-          <div className="imgbig"></div>
+          <div className="imgset">
+            {
+              imageset && imageset?.map((item, index) =>  // this means imageset is not null and imageset has some values then i will map it 1 by 1
+              {
+                return (
+                  // suppose we have 3 images in imageset then it will be returned here.
+                  <div className="imgsmall">
+                    <img src={item.image} alt="" />
+                  </div>
+                );
+              })
+            }
+          </div>
+          {/* Our active image will be shown in the div with classname "imgbig" */}
+          <div className="imgbig">
+            <img src={activeimg.image} alt="" />
+          </div>
+
         </div>
+
 
         <div className="c12">
           <h1 className="head1">{productdata.ProductName}</h1>
