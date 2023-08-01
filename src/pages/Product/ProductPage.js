@@ -9,6 +9,9 @@ import { useEffect } from 'react';
 import Navbar from '../../components/Navbar/Navbar'
 import {BsChevronLeft} from 'react-icons/bs'
 
+import './ProductPage.css'
+import '../../App.css'
+
 
 const ProductPage = () => {
   const {prodid} = useParams()
@@ -100,48 +103,55 @@ const ProductPage = () => {
 
       <div className="pc1">
         <Link to="/">
-          <button>
-            <BsChevronLeft />
+          <button className='goback'>
+            <BsChevronLeft className='backicon'/>
             Go Back
           </button>
         </Link>
 
+        {/* div c11 contains the images section */}
         <div className="c11">
           <div className="imgset">
-            {
-              imageset && imageset?.map((item, index) =>  // this means imageset is not null and imageset has some values then i will map it 1 by 1
-              {
-                return (
-                  // suppose we have 3 images in imageset then it will be returned here.
-                  <div className="imgsmall"
-                    onClick={() => {
-                      setactiveimg(item) // Suppose if we click on any image then this onClick will set that image as active image.
-                  }}>
-                    <img src={item.image} alt=""
-                    // for className if the activeimg.id matches with current item's id then give it a className of active; else don't give any className.
-                    className={
-                      activeimg.id == item.id ? 'active' : ''
-                      }
-                    />
-                  </div>
-                );
-              })
-            }
+            {imageset &&
+              imageset?.map(
+                (
+                  item,
+                  index // this means imageset is not null and imageset has some values then i will map it 1 by 1
+                ) => {
+                  return (
+                    // suppose we have 3 images in imageset then it will be returned here.
+                    <div
+                      className="imgsmall"
+                      onClick={() => {
+                        setactiveimg(item); // Suppose if we click on any image then this onClick will set that image as active image.
+                      }}
+                    >
+                      <img
+                        src={item.image}
+                        alt=""
+                        // for className if the activeimg.id matches with current item's id then give it a className of active; else don't give any className.
+                        className={activeimg.id == item.id ? "active" : ""}
+                      />
+                    </div>
+                  );
+                }
+              )}
           </div>
           {/* Our active image will be shown in the div with classname "imgbig" */}
           <div className="imgbig">
             <img src={activeimg.image} alt="" />
           </div>
-
         </div>
 
 
+        {/* div c12 contains the text section like product name, add to cart, etc..*/}
         <div className="c12">
           <h1 className="head1">{productdata.ProductName}</h1>
-          <div className="c12.1">
+
+          <div className="c12_1">
             <p className="price">
-              <span>&#8377;{productdata.SalesPrice * count}</span>
-              <span>&#8377;{productdata.ProductPrice * count}</span>
+              <span >&#8377;{productdata.SalesPrice * count}</span>
+              <span className='linethrough'>&#8377;{productdata.ProductPrice * count}</span>
             </p>
 
             <div className="incrdecr">
@@ -169,23 +179,27 @@ const ProductPage = () => {
             </div>
           </div>
 
-          <div className='btncount'>
+          <div className="btncontainer">
             <button
               onClick={() => {
                 alert("Added to cart");
-              }}>
+              }}
+            >
               Add to Cart
             </button>
 
             <button
               onClick={() => {
-                alert('Buy Now')
-              }}>
+                alert("Buy Now");
+              }}
+            >
               Buy Now
             </button>
           </div>
         </div>
+
       </div>
+
     </div>
   );
 }
