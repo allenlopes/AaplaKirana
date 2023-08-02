@@ -217,9 +217,29 @@ const ProductPage = () => {
             <button className='inactive'> Reviews </button>
           </div>
         }
+
         {
-          showreview ?
-          <div> Review Section </div>
+          !showreview ?
+          <div className='reviewcontainer'>
+            <form>
+              <div className='formgroup'>
+                <label htmlFor=''>Name</label>
+                <input type='text' />
+              </div>
+
+              <div className='formgroup'>
+                <label htmlFor=''>Email</label>
+                <input type='email' />
+              </div>
+
+              <div className='formgroup'>
+                <label htmlFor=''>Review</label>
+                <textarea name='' id='' cols="30" rows="10"></textarea>
+              </div>
+
+              <button>Submit</button>
+            </form>
+          </div>
           :
           <p className='desc'>
             {productdata.ProductDescription}
