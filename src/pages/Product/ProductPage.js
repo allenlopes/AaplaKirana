@@ -19,7 +19,7 @@ const ProductPage = () => {
   const [productdata, setproductdata] = React.useState([])
   const [activeimg, setactiveimg] = React.useState({})
   const [count, setcount] = React.useState(1)
-
+  const [showreview, setshowreview] = React.useState(false)
 
   const getproductdatabyid = async () => {
     let temp = {
@@ -198,6 +198,18 @@ const ProductPage = () => {
           </div>
         </div>
 
+      </div>
+
+
+
+{/* div with className = pc2*/}
+      <div className='pc2'>
+        {
+          !showreview ?
+          <div> Review Section </div>
+          :
+          <div>Description </div>
+        }
       </div>
 
     </div>
