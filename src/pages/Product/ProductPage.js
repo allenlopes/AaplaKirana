@@ -207,6 +207,18 @@ const ProductPage = () => {
       <div className='pc2'>
         {
           showreview ?
+          <div className='tabs'>
+            <button className='inactive'> Description </button>
+            <button className='active'> Reviews </button>
+          </div>
+          :
+          <div className='tabs'>
+            <button className='active'> Description </button>
+            <button className='inactive'> Reviews </button>
+          </div>
+        }
+        {
+          showreview ?
           <div> Review Section </div>
           :
           <p className='desc'>
