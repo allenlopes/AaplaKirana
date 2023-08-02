@@ -75,6 +75,35 @@ const ProductPage = () => {
           ProductShippingReturnPolicyType: "Days",
           ProductShippingReturnPolicyDescription: "Return Policy Description 1",
           ProductShippingReturnPolicyDescriptionType: "Days",
+          ProductReviews: [
+            {
+              ReviewId: 1,
+              Name: "Allen Lopes",
+              Email: "",
+              Rating: 5,
+              Date: "2022-08-02",
+              Review:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            },
+            {
+              ReviewId: 2,
+              Name: "Sally Dmello",
+              Email: "",
+              Rating: 4,
+              Date: "2022-08-02",
+              Review:
+                "Simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            },
+            {
+              ReviewId: 3,
+              Name: "Sallasation",
+              Email: "",
+              Rating: 4.5,
+              Date: "2022-08-02",
+              Review:
+                "The industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            },
+          ],
         },
       ],
     };
@@ -239,6 +268,22 @@ const ProductPage = () => {
 
               <button>Submit</button>
             </form>
+            <div className='allreview'>
+              {productdata.ProductReviews && productdata.ProductReviews.map((item, index) => {
+                return (
+                  <div className="review">
+                    <div className="reviewhead">
+                      <p className="name">{item.Name}</p>
+                      <p className="date">{item.Date}</p>
+                    </div>
+
+                    <div className='reviewbody'>
+                      {item.Review}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
           :
           <p className='desc'>
