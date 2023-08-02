@@ -23,60 +23,61 @@ const ProductPage = () => {
 
   const getproductdatabyid = async () => {
     let temp = {
-      "Code": 200,
-      "Message": "Success",
-      "Data": [
+      Code: 200,
+      Message: "Success",
+      Data: [
         {
-                    "ProductId": 1,
-                    "ProductName": "Product 1",
-                    "ProductDescription": "Product 1 Description",
-                    "ProductImage": [
-                      {
-                        id : 1,
-                        image : img1
-                      },
-                      {
-                        id : 2,
-                        image : img2
-                      },
-                      {
-                        id : 3,
-                        image : img3
-                      },
-                      {
-                        id : 4,
-                        image : img4
-                      }
-                    ],
-                    "ProductCode": "P1",
-                    "ProductCategory": "Category 1",
-                    "ProductSubCategory": "Sub Category 1",
-                    "ProductBrand": "Brand 1",
-                    "ProductColor": "Color 1",
-                    "ProductSize": "Size 1",
-                    "ProductWeight": "Weight 1",
-                    "ProductMaterial": "Material 1",
-                    "ProductQuantity": 10,
-                    "ProductUnit": "Unit 1",
-                    "ProductPrice": 100,
-                    "SalesPrice": 80,
-                    "ProductDiscount": 20,
-                    "ProductDiscountType": "Percentage",
-                    "ProductTax": 20,
-                    "ProductTaxType": "Percentage",
-                    "ProductShippingCharge": 20,
-                    "ProductShippingChargeType": "Percentage",
-                    "ProductShippingTime": "1-2 days",
-                    "ProductShippingTimeType": "Days",
-                    "ProductShippingLocation": "Location 1",
-                    "ProductShippingLocationType": "Country",
-                    "ProductShippingReturnPolicy": "Return Policy 1",
-                    "ProductShippingReturnPolicyType": "Days",
-                    "ProductShippingReturnPolicyDescription": "Return Policy Description 1",
-                    "ProductShippingReturnPolicyDescriptionType": "Days",
-        }
-      ]
-    }
+          ProductId: 1,
+          ProductName: "Product 1",
+          ProductDescription:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+          ProductImage: [
+            {
+              id: 1,
+              image: img1,
+            },
+            {
+              id: 2,
+              image: img2,
+            },
+            {
+              id: 3,
+              image: img3,
+            },
+            {
+              id: 4,
+              image: img4,
+            },
+          ],
+          ProductCode: "P1",
+          ProductCategory: "Category 1",
+          ProductSubCategory: "Sub Category 1",
+          ProductBrand: "Brand 1",
+          ProductColor: "Color 1",
+          ProductSize: "Size 1",
+          ProductWeight: "Weight 1",
+          ProductMaterial: "Material 1",
+          ProductQuantity: 10,
+          ProductUnit: "Unit 1",
+          ProductPrice: 100,
+          SalesPrice: 80,
+          ProductDiscount: 20,
+          ProductDiscountType: "Percentage",
+          ProductTax: 20,
+          ProductTaxType: "Percentage",
+          ProductShippingCharge: 20,
+          ProductShippingChargeType: "Percentage",
+          ProductShippingTime: "1-2 days",
+          ProductShippingTimeType: "Days",
+          ProductShippingLocation: "Location 1",
+          ProductShippingLocationType: "Country",
+          ProductShippingReturnPolicy: "Return Policy 1",
+          ProductShippingReturnPolicyType: "Days",
+          ProductShippingReturnPolicyDescription: "Return Policy Description 1",
+          ProductShippingReturnPolicyDescriptionType: "Days",
+        },
+      ],
+    };
 
 
     if(temp.Code == 200)
@@ -205,10 +206,12 @@ const ProductPage = () => {
 {/* div with className = pc2*/}
       <div className='pc2'>
         {
-          !showreview ?
+          showreview ?
           <div> Review Section </div>
           :
-          <div>Description </div>
+          <p className='desc'>
+            {productdata.ProductDescription}
+          </p>
         }
       </div>
 
