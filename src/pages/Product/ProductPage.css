@@ -179,8 +179,8 @@
 }
 
 .productpage form .formgroup{
-    display: flex;
-    flex-direction: column;
+    width:  35%;
+    display: inline-block;
     margin: 10px 0px;
 }
 
