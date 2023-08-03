@@ -131,11 +131,11 @@ const ProductPage = () => {
 
       <Navbar />
 
-{/* div with className = pc2*/}
+      {/* div with className = pc2*/}
       <div className="pc1">
         <Link to="/">
-          <button className='goback'>
-            <BsChevronLeft className='backicon'/>
+          <button className="goback">
+            <BsChevronLeft className="backicon" />
             Go Back
           </button>
         </Link>
@@ -174,15 +174,16 @@ const ProductPage = () => {
           </div>
         </div>
 
-
         {/* div c12 contains the text section like product name, add to cart, etc..*/}
         <div className="c12">
           <h1 className="head1">{productdata.ProductName}</h1>
 
           <div className="c12_1">
             <p className="price">
-              <span >&#8377;{productdata.SalesPrice * count}</span>
-              <span className='linethrough'>&#8377;{productdata.ProductPrice * count}</span>
+              <span>&#8377;{productdata.SalesPrice * count}</span>
+              <span className="linethrough">
+                &#8377;{productdata.ProductPrice * count}
+              </span>
             </p>
 
             <div className="incrdecr">
@@ -228,86 +229,92 @@ const ProductPage = () => {
             </button>
           </div>
         </div>
-
       </div>
 
-
-
-{/* div with className = pc2*/}
-      <div className='pc2'>
-        {
-          showreview ?
-          <div className='tabs'>
-            <button className='inactive'
-            onClick={() => {setshowreview(false)}}>
-            Description
+      {/* div with className = pc2*/}
+      <div className="pc2">
+        {showreview ? (
+          <div className="tabs">
+            <button
+              className="inactive"
+              onClick={() => {
+                setshowreview(false);
+              }}
+            >
+              Description
             </button>
 
-            <button className='active'
-            onClick={() => {setshowreview(true)}}>
-            Reviews
-            </button>
-          </div>
-          :
-          <div className='tabs'>
-            <button className='active'
-            onClick={() => {setshowreview(false)}}>
-            Description
-            </button>
-
-            <button className='inactive'
-            onClick={() => {setshowreview(true)}}>
-            Reviews
+            <button
+              className="active"
+              onClick={() => {
+                setshowreview(true);
+              }}
+            >
+              Reviews
             </button>
           </div>
-        }
+        ) : (
+          <div className="tabs">
+            <button
+              className="active"
+              onClick={() => {
+                setshowreview(false);
+              }}
+            >
+              Description
+            </button>
 
-        {
-          !showreview ?
-          <div className='reviewcontainer'>
+            <button
+              className="inactive"
+              onClick={() => {
+                setshowreview(true);
+              }}
+            >
+              Reviews
+            </button>
+          </div>
+        )}
+
+        {!showreview ? (
+          <div className="reviewcontainer">
             <form>
-              <div className='formgroup'>
-                <label htmlFor=''>Name</label>
-                <input type='text' />
+              <div className="formgroup">
+                <label htmlFor="">Name</label>
+                <input type="text" />
               </div>
 
-              <div className='formgroup'>
-                <label htmlFor=''>Email</label>
-                <input type='email' />
+              <div className="formgroup">
+                <label htmlFor="">Email</label>
+                <input type="email" />
               </div>
 
-              <div className='formgroup'>
-                <label htmlFor=''>Review</label>
-                <textarea name='' id='' cols="30" rows="10"></textarea>
+              <div className="formgroup">
+                <label htmlFor="">Review</label>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
               </div>
 
               <button>Submit</button>
-
             </form>
-            <div className='allreview'>
-              {productdata.ProductReviews && productdata.ProductReviews.map((item, index) => {
-                return (
-                  <div className="review">
-                    <div className="reviewhead">
-                      <p className="name">{item.Name}</p>
-                      <p className="date">{item.Date}</p>
-                    </div>
+            <div className="allreview">
+              {productdata.ProductReviews &&
+                productdata.ProductReviews.map((item, index) => {
+                  return (
+                    <div className="review">
+                      <div className="reviewhead">
+                        <p className="name">{item.Name}</p>
+                        <p className="date">{item.Date}</p>
+                      </div>
 
-                    <div className='reviewbody'>
-                      {item.Review}
+                      <div className="reviewbody">{item.Review}</div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </div>
           </div>
-          :
-          <p className='desc'>
-            {productdata.ProductDescription}
-          </p>
-        }
+        ) : (
+          <p className="desc">{productdata.ProductDescription}</p>
+        )}
       </div>
-
     </div>
   );
 }
