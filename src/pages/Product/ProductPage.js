@@ -131,6 +131,7 @@ const ProductPage = () => {
 
       <Navbar />
 
+{/* div with className = pc2*/}
       <div className="pc1">
         <Link to="/">
           <button className='goback'>
@@ -237,18 +238,32 @@ const ProductPage = () => {
         {
           showreview ?
           <div className='tabs'>
-            <button className='inactive'> Description </button>
-            <button className='active'> Reviews </button>
+            <button className='inactive'
+            onClick={() => {setshowreview(false)}}>
+            Description
+            </button>
+
+            <button className='active'
+            onClick={() => {setshowreview(true)}}>
+            Reviews
+            </button>
           </div>
           :
           <div className='tabs'>
-            <button className='active'> Description </button>
-            <button className='inactive'> Reviews </button>
+            <button className='active'
+            onClick={() => {setshowreview(false)}}>
+            Description
+            </button>
+
+            <button className='inactive'
+            onClick={() => {setshowreview(true)}}>
+            Reviews
+            </button>
           </div>
         }
 
         {
-          !showreview ?
+          showreview ?
           <div className='reviewcontainer'>
             <form>
               <div className='formgroup'>
