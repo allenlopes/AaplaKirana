@@ -263,7 +263,7 @@ const ProductPage = () => {
         }
 
         {
-          showreview ?
+          !showreview ?
           <div className='reviewcontainer'>
             <form>
               <div className='formgroup'>
@@ -282,6 +282,7 @@ const ProductPage = () => {
               </div>
 
               <button>Submit</button>
+
             </form>
             <div className='allreview'>
               {productdata.ProductReviews && productdata.ProductReviews.map((item, index) => {
