@@ -11,6 +11,8 @@ import {BsChevronLeft} from 'react-icons/bs'
 
 import './ProductPage.css'
 import '../../App.css'
+import Footer1 from '../../components/Footer/Footer1';
+import Footer2 from "../../components/Footer/Footer2";
 
 
 const ProductPage = () => {
@@ -275,7 +277,8 @@ const ProductPage = () => {
           </div>
         )}
 
-        {!showreview ? (
+        {
+        showreview ? (
           <div className="reviewcontainer">
             <form>
               <div className="formgroup">
@@ -295,14 +298,16 @@ const ProductPage = () => {
 
               <button>Submit</button>
             </form>
+
             <div className="allreview">
+              <h1 className='head1'>Product Reviews</h1>
               {productdata.ProductReviews &&
                 productdata.ProductReviews.map((item, index) => {
                   return (
                     <div className="review">
                       <div className="reviewhead">
                         <p className="name">{item.Name}</p>
-                        <p className="date">{item.Date}</p>
+                        <span className="date">{item.Date}</span>
                       </div>
 
                       <div className="reviewbody">{item.Review}</div>
@@ -315,6 +320,9 @@ const ProductPage = () => {
           <p className="desc">{productdata.ProductDescription}</p>
         )}
       </div>
+
+      <Footer1 />
+      <Footer2 />
     </div>
   );
 }
