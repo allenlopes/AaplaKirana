@@ -13,6 +13,7 @@ import './ProductPage.css'
 import '../../App.css'
 import Footer1 from '../../components/Footer/Footer1';
 import Footer2 from "../../components/Footer/Footer2";
+import {AiOutlineStar} from 'react-icons/ai';
 
 
 const ProductPage = () => {
@@ -122,7 +123,10 @@ const ProductPage = () => {
 
   useEffect(() => {
     getproductdatabyid()
+    window.scroll(0,0)
   },[])
+
+  const [rating, setrating] = React.useState(0)
 
   return (
     <div className="productpage">
@@ -294,6 +298,63 @@ const ProductPage = () => {
               <div className="formgroup">
                 <label htmlFor="">Review</label>
                 <textarea name="" id="" cols="30" rows="10"></textarea>
+              </div>
+
+          {/* Creating label for rating stars for giving stars to the product */}
+              <div className='formgroup'>
+                <label htmlFor="">Rating</label>
+                <div className='rating'>
+                  <div className='star' onClick={() => { setrating(1) }}>
+                    {
+                      rating >= 1 ?
+                      < AiOutlineStar className="staractive" />
+                      :
+                      <AiOutlineStar className="starinactive" />
+
+                    }
+                  </div>
+
+                  <div className='star' onClick={() => { setrating(2) }}>
+                    {
+                      rating >= 2 ?
+                      < AiOutlineStar className="staractive" />
+                      :
+                      <AiOutlineStar className="starinactive" />
+
+                    }
+                  </div>
+
+                  <div className='star' onClick={() => { setrating(3) }}>
+                    {
+                      rating >= 3 ?
+                      < AiOutlineStar className="staractive" />
+                      :
+                      <AiOutlineStar className="starinactive" />
+
+                    }
+                  </div>
+
+                  <div className='star' onClick={() => { setrating(4) }}>
+                    {
+                      rating >= 4 ?
+                      < AiOutlineStar className="staractive" />
+                      :
+                      <AiOutlineStar className="starinactive" />
+
+                    }
+                  </div>
+
+                  <div className='star' onClick={() => { setrating(5) }}>
+                    {
+                      rating >= 5 ?
+                      < AiOutlineStar className="staractive" />
+                      :
+                      <AiOutlineStar className="starinactive" />
+
+                    }
+                  </div>
+
+                </div>
               </div>
 
               <button>Submit</button>

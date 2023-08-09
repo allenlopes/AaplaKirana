@@ -287,3 +287,32 @@
     max-width: 1000px;
     align-self: center;
 }
+
+
+
+/* CSS FOR stars rating in reviews section */
+.productpage .rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0px;
+}
+
+.productpage .rating .starinactive {
+    color: rgb(192, 191, 191);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.productpage .rating .starinactive:hover {
+    color: var(--col1);
+}
+
+.productpage .rating .staractive {
+    color: goldenrod;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    fill: gold;
+}
