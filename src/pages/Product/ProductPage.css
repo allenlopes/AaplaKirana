@@ -253,9 +253,10 @@
 
 .productpage .reviewhead {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin: 18px 0px;
+    position: relative;
 }
 
 .productpage .reviewhead p {
@@ -263,6 +264,8 @@
     padding: 0px;
     font-size: 18px;
     color: var(--col1);
+    position: absolute;
+    left: 0px;
 }
 
 .productpage .reviewhead span {
@@ -271,6 +274,7 @@
     padding: 5px 10px;
     border-radius: 20px;
     color: white;
+    margin-left: 10px;
 }
 
 
@@ -290,7 +294,7 @@
 
 
 
-/* CSS FOR stars rating in reviews section */
+/* CSS FOR user rating in reviews section */
 .productpage .rating {
     display: flex;
     align-items: center;
@@ -313,6 +317,35 @@
     color: goldenrod;
     width: 30px;
     height: 30px;
+    cursor: pointer;
+    fill: gold;
+}
+
+
+
+/* CSS FOR seeing which user had given how much rating in reviews section */
+.productpage .rating1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0px;
+}
+
+.productpage .rating1 .starinactive {
+    color: rgb(192, 191, 191);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.productpage .rating1 .starinactive:hover {
+    color: var(--col1);
+}
+
+.productpage .rating1 .staractive {
+    color: goldenrod;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     fill: gold;
 }

@@ -78,32 +78,32 @@ const ProductPage = () => {
           ProductShippingReturnPolicyType: "Days",
           ProductShippingReturnPolicyDescription: "Return Policy Description 1",
           ProductShippingReturnPolicyDescriptionType: "Days",
-          ProductReviews: [
+          "ProductReviews": [
             {
-              ReviewId: 1,
-              Name: "Allen Lopes",
-              Email: "",
-              Rating: 5,
-              Date: "2022-08-02",
-              Review:
+              "ReviewId": 1,
+              "Name": "Allen Lopes",
+              "Email": "",
+              "Rating": 5,
+              "Date": "2022-08-02",
+              "Review":
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
             },
             {
-              ReviewId: 2,
-              Name: "Sally Dmello",
-              Email: "",
-              Rating: 4,
-              Date: "2022-08-02",
-              Review:
+              "ReviewId": 2,
+              "Name": "Sally Dmello",
+              "Email": "",
+              "Rating": 4,
+              "Date": "2022-08-02",
+              "Review":
                 "Simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
             },
             {
-              ReviewId: 3,
-              Name: "Sallasation",
-              Email: "",
-              Rating: 4.5,
-              Date: "2022-08-02",
-              Review:
+              "ReviewId": 3,
+              "Name": "Sallasation",
+              "Email": "",
+              "Rating": 3,
+              "Date": "2022-08-02",
+              "Review":
                 "The industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
             },
           ],
@@ -300,7 +300,7 @@ const ProductPage = () => {
                 <textarea name="" id="" cols="30" rows="10"></textarea>
               </div>
 
-          {/* Creating label for rating stars for giving stars to the product */}
+          {/* Creating rating stars for giving stars to the product */}
               <div className='formgroup'>
                 <label htmlFor="">Rating</label>
                 <div className='rating'>
@@ -368,6 +368,61 @@ const ProductPage = () => {
                     <div className="review">
                       <div className="reviewhead">
                         <p className="name">{item.Name}</p>
+
+                {/* Creating rating for seeing which user had given how much rating in reviews section */}
+                <div className='rating1'>
+                  <div className='star'>
+                    {
+                      item.Rating >= 1 ?
+                      < AiOutlineStar className="staractive" />
+                      :
+                      <AiOutlineStar className="starinactive" />
+
+                    }
+                  </div>
+
+                  <div className='star'>
+                    {
+                      item.Rating >= 2 ?
+                      < AiOutlineStar className="staractive" />
+                      :
+                      <AiOutlineStar className="starinactive" />
+
+                    }
+                  </div>
+
+                  <div className='star'>
+                    {
+                      item.Rating >= 3 ?
+                      < AiOutlineStar className="staractive" />
+                      :
+                      <AiOutlineStar className="starinactive" />
+
+                    }
+                  </div>
+
+                  <div className='star'>
+                    {
+                      item.Rating >= 4 ?
+                      < AiOutlineStar className="staractive" />
+                      :
+                      <AiOutlineStar className="starinactive" />
+
+                    }
+                  </div>
+
+                  <div className='star'>
+                    {
+                      item.Rating >= 5 ?
+                      < AiOutlineStar className="staractive" />
+                      :
+                      <AiOutlineStar className="starinactive" />
+
+                    }
+                  </div>
+
+                </div>
+
                         <span className="date">{item.Date}</span>
                       </div>
 
