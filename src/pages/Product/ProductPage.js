@@ -14,6 +14,7 @@ import '../../App.css'
 import Footer1 from '../../components/Footer/Footer1';
 import Footer2 from "../../components/Footer/Footer2";
 import {AiOutlineStar} from 'react-icons/ai';
+import ProductSlider from '../../components/Product/ProductSlider';
 
 
 const ProductPage = () => {
@@ -26,15 +27,15 @@ const ProductPage = () => {
 
   const getproductdatabyid = async () => {
     let temp = {
-      Code: 200,
-      Message: "Success",
-      Data: [
+      "Code": 200,
+      "Message": "Success",
+      "Data": [
         {
-          ProductId: 1,
-          ProductName: "Product 1",
-          ProductDescription:
+          "ProductId": 1,
+          "ProductName": "Product 1",
+          "ProductDescription":
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-          ProductImage: [
+          "ProductImage": [
             {
               id: 1,
               image: img1,
@@ -105,11 +106,11 @@ const ProductPage = () => {
               "Date": "2022-08-02",
               "Review":
                 "The industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-            },
-          ],
-        },
-      ],
-    };
+            }
+          ]
+        }
+      ]
+    }
 
 
     if(temp.Code == 200)
@@ -127,6 +128,116 @@ const ProductPage = () => {
   },[])
 
   const [rating, setrating] = React.useState(0)
+
+    const products = [
+      {
+        id: 1,
+        productimage: img1,
+        productname: "Product 1",
+        productprice: 100,
+        counttype: "1 each",
+        discountpercent: 12,
+      },
+
+      {
+        id: 2,
+        productimage: img2,
+        productname: "Product 2",
+        productprice: 200,
+        counttype: "1 per kg",
+        discountpercent: 12,
+      },
+
+      {
+        id: 3,
+        productimage: img3,
+        productname: "Product 3",
+        productprice: 400,
+        counttype: "1 per kg",
+        discountpercent: 12,
+      },
+
+      {
+        id: 4,
+        productimage: img4,
+        productname: "Product 4",
+        productprice: 400,
+        counttype: "1 each",
+        discountpercent: 19,
+      },
+
+      {
+        id: 5,
+        productimage: img1,
+        productname: "Product 5",
+        productprice: 100,
+        counttype: "1 each",
+        discountpercent: 12,
+      },
+
+      {
+        id: 6,
+        productimage: img2,
+        productname: "Product 6",
+        productprice: 200,
+        counttype: "1 per kg",
+        discountpercent: 12,
+      },
+
+      {
+       id: 7,
+        productimage: img3,
+        productname: "Product 7",
+        productprice: 400,
+        counttype: "1 per kg",
+        discountpercent: 12,
+      },
+
+      {
+        id: 8,
+        productimage: img4,
+        productname: "Product 8",
+        productprice: 400,
+        counttype: "1 each",
+        discountpercent: 19,
+      },
+
+      {
+        id: 9,
+        productimage: img1,
+        productname: "Product 9",
+        productprice: 100,
+        counttype: "1 each",
+        discountpercent: 12,
+      },
+
+      {
+        id: 10,
+        productimage: img2,
+        productname: "Product 10",
+        productprice: 200,
+        counttype: "1 per kg",
+        discountpercent: 12,
+      },
+
+      {
+        id: 11,
+        productimage: img3,
+        productname: "Product 11",
+        productprice: 400,
+        counttype: "1 per kg",
+        discountpercent: 12,
+      },
+
+      {
+        id: 12,
+        productimage: img4,
+        productname: "Product 12",
+        productprice: 400,
+        counttype: "1 each",
+        discountpercent: 19,
+      },
+    ];
 
   return (
     <div className="productpage">
@@ -150,29 +261,25 @@ const ProductPage = () => {
         <div className="c11">
           <div className="imgset">
             {imageset &&
-              imageset?.map(
-                (
-                  item,
-                  index // this means imageset is not null and imageset has some values then i will map it 1 by 1
-                ) => {
-                  return (
-                    // suppose we have 3 images in imageset then it will be returned here.
-                    <div
-                      className="imgsmall"
-                      onClick={() => {
-                        setactiveimg(item); // Suppose if we click on any image then this onClick will set that image as active image.
-                      }}
-                    >
-                      <img
-                        src={item.image}
-                        alt=""
-                        // for className if the activeimg.id matches with current item's id then give it a className of active; else don't give any className.
-                        className={activeimg.id == item.id ? "active" : ""}
-                      />
-                    </div>
-                  );
-                }
-              )}
+              imageset?.map((item, index) => {
+                // this means imageset is not null and imageset has some values then i will map it 1 by 1
+                return (
+                  // suppose we have 3 images in imageset then it will be returned here.
+                  <div
+                    className="imgsmall"
+                    onClick={() => {
+                      setactiveimg(item); // Suppose if we click on any image then this onClick will set that image as active image.
+                    }}
+                  >
+                    <img
+                      src={item.image}
+                      alt=""
+                      // for className if the activeimg.id matches with current item's id then give it a className of active; else don't give any className.
+                      className={activeimg.id == item.id ? "active" : ""}
+                    />
+                  </div>
+                );
+              })}
           </div>
           {/* Our active image will be shown in the div with classname "imgbig" */}
           <div className="imgbig">
@@ -281,8 +388,7 @@ const ProductPage = () => {
           </div>
         )}
 
-        {
-        showreview ? (
+        {showreview ? (
           <div className="reviewcontainer">
             <form>
               <div className="formgroup">
@@ -300,60 +406,74 @@ const ProductPage = () => {
                 <textarea name="" id="" cols="30" rows="10"></textarea>
               </div>
 
-          {/* Creating rating stars for giving stars to the product */}
-              <div className='formgroup'>
+              {/* Creating rating stars for giving stars to the product */}
+              <div className="formgroup">
                 <label htmlFor="">Rating</label>
-                <div className='rating'>
-                  <div className='star' onClick={() => { setrating(1) }}>
-                    {
-                      rating >= 1 ?
-                      < AiOutlineStar className="staractive" />
-                      :
+                <div className="rating">
+                  <div
+                    className="star"
+                    onClick={() => {
+                      setrating(1);
+                    }}
+                  >
+                    {rating >= 1 ? (
+                      <AiOutlineStar className="staractive" />
+                    ) : (
                       <AiOutlineStar className="starinactive" />
-
-                    }
+                    )}
                   </div>
 
-                  <div className='star' onClick={() => { setrating(2) }}>
-                    {
-                      rating >= 2 ?
-                      < AiOutlineStar className="staractive" />
-                      :
+                  <div
+                    className="star"
+                    onClick={() => {
+                      setrating(2);
+                    }}
+                  >
+                    {rating >= 2 ? (
+                      <AiOutlineStar className="staractive" />
+                    ) : (
                       <AiOutlineStar className="starinactive" />
-
-                    }
+                    )}
                   </div>
 
-                  <div className='star' onClick={() => { setrating(3) }}>
-                    {
-                      rating >= 3 ?
-                      < AiOutlineStar className="staractive" />
-                      :
+                  <div
+                    className="star"
+                    onClick={() => {
+                      setrating(3);
+                    }}
+                  >
+                    {rating >= 3 ? (
+                      <AiOutlineStar className="staractive" />
+                    ) : (
                       <AiOutlineStar className="starinactive" />
-
-                    }
+                    )}
                   </div>
 
-                  <div className='star' onClick={() => { setrating(4) }}>
-                    {
-                      rating >= 4 ?
-                      < AiOutlineStar className="staractive" />
-                      :
+                  <div
+                    className="star"
+                    onClick={() => {
+                      setrating(4);
+                    }}
+                  >
+                    {rating >= 4 ? (
+                      <AiOutlineStar className="staractive" />
+                    ) : (
                       <AiOutlineStar className="starinactive" />
-
-                    }
+                    )}
                   </div>
 
-                  <div className='star' onClick={() => { setrating(5) }}>
-                    {
-                      rating >= 5 ?
-                      < AiOutlineStar className="staractive" />
-                      :
+                  <div
+                    className="star"
+                    onClick={() => {
+                      setrating(5);
+                    }}
+                  >
+                    {rating >= 5 ? (
+                      <AiOutlineStar className="staractive" />
+                    ) : (
                       <AiOutlineStar className="starinactive" />
-
-                    }
+                    )}
                   </div>
-
                 </div>
               </div>
 
@@ -361,7 +481,7 @@ const ProductPage = () => {
             </form>
 
             <div className="allreview">
-              <h1 className='head1'>Product Reviews</h1>
+              <h1 className="head1">Product Reviews</h1>
               {productdata.ProductReviews &&
                 productdata.ProductReviews.map((item, index) => {
                   return (
@@ -369,59 +489,48 @@ const ProductPage = () => {
                       <div className="reviewhead">
                         <p className="name">{item.Name}</p>
 
-                {/* Creating rating for seeing which user had given how much rating in reviews section */}
-                <div className='rating1'>
-                  <div className='star'>
-                    {
-                      item.Rating >= 1 ?
-                      < AiOutlineStar className="staractive" />
-                      :
-                      <AiOutlineStar className="starinactive" />
+                        {/* Creating rating for seeing which user had given how much rating in reviews section */}
+                        <div className="rating1">
+                          <div className="star">
+                            {item.Rating >= 1 ? (
+                              <AiOutlineStar className="staractive" />
+                            ) : (
+                              <AiOutlineStar className="starinactive" />
+                            )}
+                          </div>
 
-                    }
-                  </div>
+                          <div className="star">
+                            {item.Rating >= 2 ? (
+                              <AiOutlineStar className="staractive" />
+                            ) : (
+                              <AiOutlineStar className="starinactive" />
+                            )}
+                          </div>
 
-                  <div className='star'>
-                    {
-                      item.Rating >= 2 ?
-                      < AiOutlineStar className="staractive" />
-                      :
-                      <AiOutlineStar className="starinactive" />
+                          <div className="star">
+                            {item.Rating >= 3 ? (
+                              <AiOutlineStar className="staractive" />
+                            ) : (
+                              <AiOutlineStar className="starinactive" />
+                            )}
+                          </div>
 
-                    }
-                  </div>
+                          <div className="star">
+                            {item.Rating >= 4 ? (
+                              <AiOutlineStar className="staractive" />
+                            ) : (
+                              <AiOutlineStar className="starinactive" />
+                            )}
+                          </div>
 
-                  <div className='star'>
-                    {
-                      item.Rating >= 3 ?
-                      < AiOutlineStar className="staractive" />
-                      :
-                      <AiOutlineStar className="starinactive" />
-
-                    }
-                  </div>
-
-                  <div className='star'>
-                    {
-                      item.Rating >= 4 ?
-                      < AiOutlineStar className="staractive" />
-                      :
-                      <AiOutlineStar className="starinactive" />
-
-                    }
-                  </div>
-
-                  <div className='star'>
-                    {
-                      item.Rating >= 5 ?
-                      < AiOutlineStar className="staractive" />
-                      :
-                      <AiOutlineStar className="starinactive" />
-
-                    }
-                  </div>
-
-                </div>
+                          <div className="star">
+                            {item.Rating >= 5 ? (
+                              <AiOutlineStar className="staractive" />
+                            ) : (
+                              <AiOutlineStar className="starinactive" />
+                            )}
+                          </div>
+                        </div>
 
                         <span className="date">{item.Date}</span>
                       </div>
@@ -437,6 +546,14 @@ const ProductPage = () => {
         )}
       </div>
 
+      {/* Slider container for product slider */}
+      <div className="slidercont">
+        <ProductSlider products={products} categoryname="Related Products" />
+      </div>
+
+      <div className="slidercont">
+        <ProductSlider products={products} categoryname="Explore More" />
+      </div>
       <Footer1 />
       <Footer2 />
     </div>
