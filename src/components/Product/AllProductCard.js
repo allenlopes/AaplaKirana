@@ -9,9 +9,10 @@ const AllProductCard = ({ data }) => {
   const [show, setShow] = useState(false)
   const [qty, setqty] = useState(1)
 
-  const getproductid = ()=> {
-    alert(data.id)
-  }
+  // const getproductid = ()=> {
+  //   alert(data.id)
+  // }
+
   return (
     <div className="product">
       <div className="s1">
@@ -30,7 +31,7 @@ const AllProductCard = ({ data }) => {
       <div className="s3">
         <p>{data.counttype}</p>
       </div>
-      {show ? ( //If show is true then it shows nothing, else the div part is executed.
+      {show ? //If show is true then it shows nothing, else the div part is executed.
         <div className="addbtn">
           <div className="qty">
             <button
@@ -45,10 +46,7 @@ const AllProductCard = ({ data }) => {
             <p>{qty}</p>
             <button onClick={() => setqty(qty + 1)}>+</button>
           </div>
-          <button
-            className="addtocart"
-            onClick={() => {
-              setShow(false);
+          <button className="addtocart" onClick={() => { setShow(false);
               // setqty(1)
               alert("Product added to cart :)");
             }}
@@ -56,7 +54,7 @@ const AllProductCard = ({ data }) => {
             Add to cart
           </button>
         </div>
-      ) : (
+       :
         <div className="addbtn">
           <Link
             to={`/product/${data.id}`}
@@ -65,9 +63,9 @@ const AllProductCard = ({ data }) => {
           </Link>
           <AiOutlinePlusCircle onClick={() => setShow(true)} />
         </div>
-      )}
+      }
     </div>
   );
 }
 
-export default AllProductCard
+export default AllProductCard;

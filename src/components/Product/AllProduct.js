@@ -8,6 +8,7 @@ import './AllProduct.css'
 
 const AllProduct = () => {
   const products = [
+
     {
       id: 1,
       productimage: img1,
@@ -115,7 +116,7 @@ const AllProduct = () => {
       counttype: "1 each",
       discountpercent: 19,
     },
-  ];
+  ]
 
   return (
     <div className='allproducts'>
